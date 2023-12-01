@@ -1,0 +1,21 @@
+version: '3.4'
+services:
+  frontend:
+    image: frontcontainer:latest
+    ports: 3000:3000
+    networks: app-net
+    build: ./frontend
+
+  backend:
+    image: backcontainer:latest
+    ports: 3000:3000
+    networks: app-net
+    build: ./backend
+
+  database:
+    image: dbcontainer:latest
+    ports: 3000:3000
+    networks: app-net
+    build: ./Mysql
+networks:
+  app-net:
